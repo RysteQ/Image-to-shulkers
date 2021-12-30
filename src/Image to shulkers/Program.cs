@@ -7,8 +7,6 @@
  * Purpose: The purpose of this program is to turn any image into coloured minecraft shulkers, it takes an image as the input
  * and outputs a text file with the command needed for each column, in the future I will add a python script or anything
  * to automate the process of reading the commands and executing them in minecraft
- * 
- * Note: If you expect for me to comment my own code then lower your expectasions
 */
 
 if (args.Length == 0)
