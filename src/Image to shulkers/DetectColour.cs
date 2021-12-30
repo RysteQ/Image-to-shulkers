@@ -11,6 +11,7 @@ public class Detect_Colour
     {
         List<string> colourValues = configFile.readConfigFile();
         List<string> toReturn = new List<string>();
+        bool found = false;
 
         for (int x = 0; x < image.Width; x++)
         {
@@ -28,7 +29,7 @@ public class Detect_Colour
                             {
                                 if (colourValues[k].Substring(0, 2) == "C_")
                                 {
-                                    toReturn.Add(colourValues[k].Remove(0, 2)); 
+                                    toReturn.Add(colourValues[k].Remove(0, 2));
                                     i = colourValues.Count;
                                     k = -1;
                                 }
@@ -37,8 +38,6 @@ public class Detect_Colour
                     }
                 }
             }
-
-            toReturn.Add("NEW_COLUMN");
         }
 
         return toReturn;

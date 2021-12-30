@@ -36,8 +36,9 @@ if (inputImage.Height * inputImage.Width > 10000)
 Detect_Colour detectColour = new Detect_Colour(inputImage);
 List<string> colours = detectColour.getColours(new Config_File("config.cfg"));
 Spawn_Shulkers shulkers = new Spawn_Shulkers(colours, inputImage.Height);
+Datapack newDatapack = new Datapack();
 
-shulkers.spawnShulkers("out.txt");
+newDatapack.createDatapack(shulkers.spawnShulkers("out.txt"));
 
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("Done !!!!");

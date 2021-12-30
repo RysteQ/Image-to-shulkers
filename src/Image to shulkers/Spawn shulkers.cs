@@ -6,39 +6,34 @@
         imageHeight = heightOfImage;
     }
 
-    public void spawnShulkers(string outFilename)
+    public List<string> spawnShulkers(string outFilename)
     {
         if (File.Exists(outFilename))
             File.Delete(outFilename);
 
-        StreamWriter outFile = new StreamWriter(outFilename);
-        int zOffset = 0;
+        List<string> toReturn = new List<string>();
         int yOffset = 0;
 
-        for (int i = 0; i < shulkerColours.Count; i += imageHeight)
+        for (int i = 0; i < imageHeight; i++)
         {
-            if (shulkerColours[i] != "NEW_COLUMN")
-            {
-                outFile.WriteLine("/summon minecraft:shulker ~1 ~" + yOffset + " ~" + zOffset + " {Color:" + getColourCode(shulkerColours[i]) + passengerGenerator(i) + paddingGenerator());
-            } else
-            {
-                zOffset = -1;
-                yOffset++;
-            }
+            //for (int j = 0; j < imageHeight; j++)
+            //{
+                toReturn.Add("summon minecraft:shulker ~1 ~ ~" + yOffset + " {Color:" + getColourCode(shulkerColours[i * imageHeight]) + passengerGenerator(i) + paddingGenerator());
+            //}
 
-            zOffset++;
+            yOffset++;
         }
 
-        outFile.Close();
+        return toReturn;
     }
 
-    private string passengerGenerator(int currentIndex)
+    private string passengerGenerator(int offset)
     {
         string toReturn = "";
         
         for (int i = 1; i < imageHeight; i++)
         {
-            toReturn += ", Passengers:[{id:shulker, Color:" + getColourCode(shulkerColours[i + currentIndex]).ToString();
+            toReturn += ", Passengers:[{id:shulker, Color:" + getColourCode(shulkerColours[i + (imageHeight * offset)]).ToString();
         }
 
         return toReturn;
