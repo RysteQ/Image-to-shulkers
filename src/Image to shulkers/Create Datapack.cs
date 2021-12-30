@@ -1,6 +1,13 @@
-﻿public class Datapack
+﻿/*
+ * Input: String, List (string)
+ * Output: File (.mcfunction)
+ * 
+ * Purpose: To save the commands needed for the shulkers to spawn inside a minecraft datapack function
+ */
+
+public class Datapack
 {
-    public void createDatapack(List<string> information)
+    public void createDatapack(string filename, List<string> information)
     {
         if (File.Exists(Environment.CurrentDirectory + "\\image.mcfunction"))
             File.Delete(Environment.CurrentDirectory + "\\image.mcfunction");

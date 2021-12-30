@@ -21,7 +21,7 @@ if (args.Length == 0)
 
 Bitmap inputImage = new Bitmap(Image.FromFile(args[0]));
 
-if (inputImage.Height * inputImage.Width > 10000)
+if (inputImage.Height > 200 || inputImage.Width > 400)
 {
     Console.ForegroundColor = ConsoleColor.Red;
     Console.WriteLine("Are you sure you want to continue with this image (Y / N) ?");
@@ -38,7 +38,7 @@ List<string> colours = detectColour.getColours(new Config_File("config.cfg"));
 Spawn_Shulkers shulkers = new Spawn_Shulkers(colours, inputImage.Height);
 Datapack newDatapack = new Datapack();
 
-newDatapack.createDatapack(shulkers.spawnShulkers("out.txt"));
+newDatapack.createDatapack("image.mcfunction", shulkers.spawnShulkers());
 
 Console.ForegroundColor = ConsoleColor.Green;
 Console.WriteLine("Done !!!!");

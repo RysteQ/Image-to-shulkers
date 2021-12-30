@@ -1,4 +1,11 @@
-﻿public class Spawn_Shulkers
+﻿/*
+ * Input: List (string), Integer
+ * Output: List (string)
+ * 
+ * Purpose: This just creates the commands needed for the function file to work on
+ */
+
+public class Spawn_Shulkers
 {
     public Spawn_Shulkers(List<string> colours, int heightOfImage)
     {
@@ -6,20 +13,14 @@
         imageHeight = heightOfImage;
     }
 
-    public List<string> spawnShulkers(string outFilename)
+    public List<string> spawnShulkers()
     {
-        if (File.Exists(outFilename))
-            File.Delete(outFilename);
-
         List<string> toReturn = new List<string>();
         int yOffset = 0;
 
         for (int i = 0; i < imageHeight; i++)
         {
-            //for (int j = 0; j < imageHeight; j++)
-            //{
-                toReturn.Add("summon minecraft:shulker ~1 ~ ~" + yOffset + " {Color:" + getColourCode(shulkerColours[i * imageHeight]) + passengerGenerator(i) + paddingGenerator());
-            //}
+            toReturn.Add("summon minecraft:shulker ~2 ~ ~" + yOffset + " {Color:" + getColourCode(shulkerColours[i * imageHeight]) + passengerGenerator(i) + paddingGenerator());
 
             yOffset++;
         }
@@ -41,12 +42,7 @@
 
     private string paddingGenerator()
     {
-        string toReturn = "}";
-
-        for (int i = 0; i < imageHeight - 1; i++)
-            toReturn += "]}";
-
-        return toReturn;
+        return String.Concat(Enumerable.Repeat("}]", imageHeight - 1));
     }
 
     private int getColourCode(string colourName)

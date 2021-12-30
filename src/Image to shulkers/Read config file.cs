@@ -1,5 +1,12 @@
 ﻿using System.IO;
 
+/*
+ * Input: String
+ * Output: List (string)
+ * 
+ * Purpose: To read the config file that the program needs to understand what RGB values correspond to what colour names
+ */
+
 public class Config_File
 {
     public Config_File(string configFileName)
