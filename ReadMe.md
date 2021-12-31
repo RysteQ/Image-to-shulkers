@@ -54,4 +54,5 @@ After you do that you just need to go to you minecraft world with commands enabl
 <br>
 
 **Special thanks to [majorsopa](https://github.com/majorsopa) for giving me that idea in the first place !**
+
 **Also thanks to [Theodore Tsirpanis](https://github.com/teo-tsirpanis) for suggesting some changes !**
