@@ -21,7 +21,7 @@ After you do that you will need to put a file named ```image.json``` file in a d
 
 <br>
 
-```
+```json
 {
     "values": [
         "NAME_OF_DIRECTORY:image"
