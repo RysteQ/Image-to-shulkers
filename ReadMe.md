@@ -1,6 +1,6 @@
 # Image to shulkers
 
-## Use
+<h3>Use</h3>
 
 The program takes any type of image as an input and with the help of the config file it outputs a file named ```image.mcfunction``` that is used with the help of a datapack. Because the program itself does not create a minecraft datapack you will need to download a datapack template from the internet and put the file in the functions folder of the datapack.
 
