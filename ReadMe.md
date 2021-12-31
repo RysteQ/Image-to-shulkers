@@ -1,21 +1,55 @@
 # Image to shulkers
 
-This repository contains the files you need to get you started turning any image you want into a wall of shulkers in minecraft. As of now the process of getting the commands to spawn the shulkers is not automated, that means when the program is done it will output a text file will all the commands you need to execute in your minecraft world.
+## Use
 
-Also, the RGB values are *semi* hardcoded, what I mean by that is that the program needs a **config file** to understand what RGB values correspond to what colour although I prefer it this way because I can customize it as much as I want and bacause every colour can have multiple RGB values.
-
----
-
-### TODO
-
-1) Automate the process of spawning shulkers after the script is finished working, maybe even some performance improvements if that is deemed necessary.
+The program takes any type of image as an input and with the help of the config file it outputs a file named ```image.mcfunction``` that is used with the help of a datapack. Because the program itself does not create a minecraft datapack you will need to download a datapack template from the internet and put the file in the functions folder of the datapack.
 
 <br>
 
-2) Maybe cleanup the code because I am not that experienced with C# and my code may be quite crappy.
+```
+├── datapack
+|  ├── minecraft
+|  ├── NAME_OF_DIRECTORY (the template may contain a different name)
+|  |  ├── functions
+|  |  |  ├── image.mcfunction
+|  pack.mcmeta
+```
+
+<br>
+
+After you do that you will need to put a file named ```image.json``` file in a different functions directory with the following code but replace the ```NAME_OF_DIRECTORY``` with the corresponding directory name.
+
+<br>
+
+```
+{
+    "values": [
+        "NAME_OF_DIRECTORY:image"
+    ]
+}
+```
+
+<br>
+
+```
+├── datapack
+|  ├── minecraft
+|  |  ├── tags
+|  |  |  ├── functions
+|  |  |  ├── image.json
+|  ├── name (the template may contain a different name)
+|  pack.mcmeta
+```
+
+<br>
+
+After you do that you just need to go to you minecraft world with commands enabled and ```/function #minecraft:image``` and you are done !!!! You have successfuly have the original image you used into your minecraft world.
+
+<br>
 
 ---
 
 ### Notes
 
 **Special thanks to [majorsopa](https://github.com/majorsopa) for giving me that idea in the first place !**
+**Also thanks to [Theodore Tsirpanis](https://github.com/teo-tsirpanis) for suggesting some changes !**
