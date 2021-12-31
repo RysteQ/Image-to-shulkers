@@ -2,7 +2,7 @@
 
 /*
  * Input: File (image)
- * Output: File (txt)
+ * Output: File (.mcfunction)
  * 
  * Purpose: The purpose of this program is to turn any image into coloured minecraft shulkers, it takes an image as the input
  * and outputs a text file with the command needed for each column, in the future I will add a python script or anything
