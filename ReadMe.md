@@ -49,8 +49,6 @@ After you do that you just need to go to you minecraft world with commands enabl
 
 ---
 
-<br>
-
 ### Notes
 
 <br>
